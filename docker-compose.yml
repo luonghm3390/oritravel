@@ -1,29 +1,42 @@
-version: '3.3'
-
+version: '3.6'
 services:
-   db:
-     image: mysql:5.7
-     volumes:
-       - F:\Workspace\wordpress\db_data:/var/lib/mysql
-     restart: always
-     environment:
-       MYSQL_ROOT_PASSWORD: somewordpress
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - F:\Workspace\WordPress\nginx:/etc/nginx/conf.d
+      - F:\Workspace\WordPress\logs/nginx:/var/log/nginx
+      - F:\Workspace\WordPress\wordpress:/var/www/html
+      - F:\Workspace\WordPress\certs:/etc/letsencrypt
+      - F:\Workspace\WordPress\certs-data:/data/letsencrypt
+    links:
+      - wordpress
+    restart: always
 
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     volumes:
-       - F:\Workspace\wordpress\var/www:/var/www
-     ports:
-       - "8000:80"
-     restart: always
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: wordpress
-volumes:
-    db_data: {}
+  mysql:
+    image: mariadb
+    container_name: mysql
+    volumes:
+      - F:\Workspace\WordPress\config:/etc/mysql/conf.d
+      - F:\Workspace\WordPress\mysql:/var/lib/mysql
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    restart: always
+
+  wordpress:
+    image: wordpress:php7.2-fpm
+    container_name: wordpress
+    volumes:
+      - F:\Workspace\WordPress\wordpress:/var/www/html
+    environment:
+      - WORDPRESS_DB_NAME=wordpress
+      - WORDPRESS_TABLE_PREFIX=wp_
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_PASSWORD=password
+    links:
+      - mysql
+    restart: always
