@@ -7,11 +7,11 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - F:\Workspace\WordPress\nginx:/etc/nginx/conf.d
-      - F:\Workspace\WordPress\logs/nginx:/var/log/nginx
-      - F:\Workspace\WordPress\wordpress:/var/www/html
-      - F:\Workspace\WordPress\certs:/etc/letsencrypt
-      - F:\Workspace\WordPress\certs-data:/data/letsencrypt
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - ./wordpress:/var/www/html
+      - ./certs:/etc/letsencrypt
+      - ./certs-data:/data/letsencrypt
     links:
       - wordpress
     restart: always
@@ -20,9 +20,7 @@ services:
     image: mariadb
     container_name: mysql
     volumes:
-      - F:\Workspace\WordPress\config:/etc/mysql/conf.d
-      - F:\Workspace\WordPress\mysql:/var/lib/mysql
-
+      - ./mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
     restart: always
@@ -31,7 +29,7 @@ services:
     image: wordpress:php7.2-fpm
     container_name: wordpress
     volumes:
-      - F:\Workspace\WordPress\wordpress:/var/www/html
+      - ./wordpress:/var/www/html
     environment:
       - WORDPRESS_DB_NAME=wordpress
       - WORDPRESS_TABLE_PREFIX=wp_
