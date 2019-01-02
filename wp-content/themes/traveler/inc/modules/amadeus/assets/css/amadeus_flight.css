@@ -1,0 +1,309 @@
+.amadeus-search-box h2.title {
+  font-size: 25px; }
+
+.amadeus-wrapper .amadeus-content-search .overlay-form {
+  min-height: 150px; }
+.amadeus-wrapper .amadeus-content-search .amadeus-list .departure-title {
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  width: 100%; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .departure-title h4.title {
+    font-size: 16px;
+    font-weight: bold; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .departure-title i {
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    color: #ed8323;
+    font-size: 22px; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .departure-title i.process-flight {
+      left: 0;
+      display: none; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .departure-title:before {
+    position: absolute;
+    width: calc(100% - 30px);
+    content: '';
+    border-bottom: 2px dashed #ed8323;
+    bottom: 0;
+    left: 0; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .departure-title #flight-count {
+    float: right; }
+.amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item {
+  display: flex;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 10px #dfdfdf;
+  margin-bottom: 25px; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left {
+    width: 20%;
+    float: left;
+    text-align: center;
+    padding: 20px; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left a.btn {
+      margin-bottom: 5px;
+      width: 100%; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left a.btn span.price {
+        display: block;
+        font-weight: bold; }
+    @media screen and (max-width: 767px) {
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left a {
+        padding: 5px; } }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left p {
+      font-size: 13px; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left p span {
+        font-style: italic;
+        color: #ed8323; }
+    @media screen and (max-width: 767px) {
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left {
+        padding: 5px; } }
+    @media screen and (max-width: 520px) {
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-left {
+        width: 100%; } }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: 77.5%;
+    float: left;
+    position: relative;
+    padding: 15px; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .img-small {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      opacity: 0.5; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .booking-item-more {
+      border-top: 1px dashed #ddd;
+      padding: 15px 0 0px 1px;
+      overflow: hidden; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .booking-item-more ul.extra-info {
+        list-style: square;
+        margin: 0;
+        padding: 0; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .booking-item-more ul.extra-info li {
+          float: left;
+          list-style: none;
+          margin-right: 20px;
+          font-size: 13px; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process {
+      display: flex;
+      padding: 15px 0; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start time.flight-start-time {
+        display: inline-block;
+        margin-top: 1px;
+        vertical-align: middle;
+        font-size: 28px;
+        line-height: 28px;
+        margin-right: 7px; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start .flight-start-date {
+        position: relative;
+        display: inline-block;
+        color: #999;
+        vertical-align: middle;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 7px; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start .flight-start-date span.flight-start-date-day {
+          display: block;
+          margin: 0px 0 4px;
+          text-align: center;
+          font-size: 12px;
+          line-height: 10px; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start .flight-start-city {
+        overflow: hidden;
+        margin-top: 6px;
+        width: 110px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 13px;
+        line-height: 1.2; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start .flight-start-city span.flight-start-city-name {
+          white-space: nowrap; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start.flight-end {
+        text-align: right; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start.flight-end .flight-start-time {
+          margin-right: 0px;
+          margin-left: 7px; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process .flight-start.flight-end .flight-start-city {
+          text-align: right; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers {
+        flex: 1;
+        padding: 0 8px;
+        font-weight: 400; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers header.flight-stop-layovers-time {
+          display: -ms-flexbox;
+          -js-display: flex;
+          display: flex;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -ms-flex-pack: center;
+          justify-content: center;
+          margin-top: 4px;
+          margin-bottom: 7px;
+          text-align: center;
+          font-size: 13px; }
+          .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers header.flight-stop-layovers-time span.formatted_time {
+            word-spacing: -.2ex;
+            direction: ltr; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list {
+          position: relative;
+          display: block; }
+          .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper {
+            display: -ms-flexbox;
+            -js-display: flex;
+            display: flex;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-pack: justify;
+            justify-content: space-between; }
+            .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item {
+              position: relative; }
+              .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .flight-stop-layover-iata {
+                position: relative;
+                margin-top: -4px;
+                width: 22px;
+                text-align: center;
+                cursor: default;
+                cursor: pointer; }
+                .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .flight-stop-layover-iata span {
+                  display: block;
+                  margin-top: 5px;
+                  text-align: center;
+                  text-transform: uppercase;
+                  line-height: 1.2; }
+                .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .flight-stop-layover-iata:before {
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border: 2px solid #fff;
+                  border-radius: 5px;
+                  background: #fff;
+                  content: ""; }
+                .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .flight-stop-layover-iata:after {
+                  position: absolute;
+                  top: 2px;
+                  left: 50%;
+                  margin-left: -4px;
+                  width: 6px;
+                  height: 6px;
+                  border: 3px solid #fff;
+                  border-radius: 6px;
+                  background-color: rgba(255, 255, 255, 0);
+                  box-shadow: 0 0 0 2px #ed8323;
+                  content: ""; }
+              .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .tooltip {
+                width: max-content; }
+                .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .tooltip .tooltip-inner {
+                  padding: 7px 8px; }
+                  .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main.flight-stop-layovers-list .flight-stop-layovers-list-wrapper .flight-stop-layover-item .tooltip .tooltip-inner .flight-tooltip {
+                    text-align: left; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-process section.flight-stop-layovers main:before {
+          position: absolute;
+          top: 0;
+          right: 10px;
+          left: 10px;
+          height: 2px;
+          background: #ed8323;
+          content: ""; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info {
+      display: none;
+      border-top: 1px dashed #ccc;
+      margin-top: 13px;
+      padding: 15px 0px 0px 0px; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-stop {
+        overflow: hidden;
+        color: #333;
+        font-weight: bold;
+        padding: 7px 0;
+        border-top: 1px dashed #ed8323;
+        border-bottom: 1px dashed #ed8323;
+        margin: 15px 0; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-stop .flight-stop-name {
+          width: 70%;
+          float: left;
+          font-size: 13px; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-stop .flight-stop-duration {
+          width: 30%;
+          float: right;
+          text-align: right; }
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main {
+        border-left: 2px dashed #ccc;
+        padding-left: 10px; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .flight-time {
+          overflow: hidden;
+          font-weight: bold;
+          color: #444; }
+          .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .flight-time .time-range {
+            width: 70%;
+            float: left; }
+          .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .flight-time .time-duration {
+            width: 30%;
+            float: right;
+            text-align: right; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .air-range {
+          font-size: 13px; }
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .flight-meta {
+          overflow: hidden; }
+          .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .flight-meta ul {
+            margin: 0;
+            padding: 0;
+            padding-left: 15px; }
+            .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid .flight-detail-info .flight-detail-item .flight-detail-main .flight-meta ul li {
+              font-size: 13px;
+              list-style: square;
+              float: left;
+              margin-right: 25px; }
+    @media screen and (max-width: 520px) {
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-mid {
+        width: 100%;
+        border-top: 1px solid #ccc;
+        padding-top: 5px;
+        margin-top: 12px;
+        border-left: 0px;
+        border-right: 0px; } }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-right {
+    width: 2.5%;
+    float: left;
+    position: relative;
+    cursor: pointer; }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-right i.fa {
+      font-size: 10px;
+      position: absolute;
+      top: 50%;
+      margin-top: -5px;
+      left: 50%;
+      margin-left: -5px; }
+      @media screen and (max-width: 520px) {
+        .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-right i.fa {
+          position: relative;
+          border-top: 1px solid gray; } }
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-right.open i {
+      -ms-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }
+    @media screen and (max-width: 520px) {
+      .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .amadeus-right {
+        width: 100%;
+        border-top: 1px solid #ccc; } }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item .hidden {
+    display: none; }
+  @media screen and (max-width: 520px) {
+    .amadeus-wrapper .amadeus-content-search .amadeus-list .amadeus-item {
+      display: block;
+      overflow: hidden; } }
+.amadeus-wrapper .amadeus-content-search .amadeus-list .load-more {
+  cursor: pointer;
+  background: #ed8323;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  display: none; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .load-more:hover {
+    opacity: 0.9; }
+  .amadeus-wrapper .amadeus-content-search .amadeus-list .load-more.no-more {
+    background: gray; }
+@media screen and (max-width: 991px) {
+  .amadeus-wrapper .amadeus-content-search {
+    min-height: 150px; } }
+
+/*# sourceMappingURL=amadeus_flight.css.map */

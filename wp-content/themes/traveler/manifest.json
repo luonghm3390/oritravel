@@ -1,0 +1,21 @@
+{
+  "short_name": "Traveler",
+  "name": "Traveler",
+  "icons": [
+    {
+      "src": "/img/favicon.png",
+      "type": "image/png",
+      "sizes": "38x40"
+    },
+    {
+      "src": "/img/logo-white.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "http://localhost/traveler/st_tour/10-days-of-vacation-in-florence-resorts/",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#ED8323"
+}

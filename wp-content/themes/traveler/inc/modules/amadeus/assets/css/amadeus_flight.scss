@@ -1,0 +1,438 @@
+$main-color: #ed8323;
+$info-tablet: "screen and (max-width : 991px)";
+$info-phone: "screen and (max-width : 767px)";
+$info-sphone: "screen and (max-width : 520px)";
+.amadeus-search-box{
+    h2{
+        &.title{
+            font-size: 25px;
+        }
+    }
+}
+.amadeus-wrapper{
+    .amadeus-content-search{
+        .overlay-form{
+            min-height:150px;
+        }
+        .amadeus-list{
+            .departure-title{
+                position: relative;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                width: 100%;
+                h4{
+                    &.title{
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                }
+                i{
+                    position: absolute;
+                    right: 0;
+                    bottom: -9px;
+                    color: $main-color;
+                    font-size: 22px;
+                    &.process-flight{
+                        left: 0;
+                        display: none;
+                    }
+                }
+                &:before{
+                    position: absolute;
+                    width: calc(100% - 30px);
+                    content: '';
+                    border-bottom: 2px dashed $main-color;
+                    bottom: 0;
+                    left: 0;
+                }
+                #flight-count{
+                    float: right;
+                }
+            }
+            .amadeus-item{
+                display: flex;
+                border: 1px solid #ccc;
+                box-shadow: 2px 2px 10px #dfdfdf;
+                margin-bottom: 25px;
+                .amadeus-left{
+                    width: 20%;
+                    float: left;
+                    text-align: center;
+                    padding: 20px;
+                    a{
+                        &.btn{
+                            margin-bottom: 5px;
+                            width: 100%;
+                            span{
+                                &.price{
+                                    display: block;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        @media #{$info-phone} {
+                            padding: 5px;
+                        }
+                    }
+                    p{
+                        font-size: 13px;
+                        span{
+                            font-style: italic;
+                            color: $main-color;
+                        }
+                    }
+                    img{
+
+                    }
+                    @media #{$info-phone} {
+                        padding: 5px;
+                    }
+                    @media #{$info-sphone} {
+                        width: 100%;
+                    }
+                }
+                .amadeus-mid{
+                    border-left:1px solid #ccc;
+                    border-right:1px solid #ccc;
+                    width: 77.5%;
+                    float: left;
+                    position: relative;
+                    padding: 15px;
+                    .img-small{
+                        position: absolute;
+                        bottom: 2px;
+                        right: 2px;
+                        opacity: 0.5;
+                    }
+                    .booking-item-more{
+                        border-top: 1px dashed #ddd;
+                        padding: 15px 0 0px 1px;
+                        overflow: hidden;
+                        ul{
+                            &.extra-info{
+                                list-style: square;
+                                margin: 0;
+                                padding: 0;
+                                li{
+                                    float: left;
+                                    list-style: none;
+                                    margin-right: 20px;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                    .flight-process{
+                        display: flex;
+                        padding: 15px 0;
+                        .flight-start{
+                            time{
+                                &.flight-start-time{
+                                    display: inline-block;
+                                    margin-top: 1px;
+                                    vertical-align: middle;
+                                    font-size: 28px;
+                                    line-height: 28px;
+                                    margin-right: 7px;
+                                }
+                            }
+                            .flight-start-date{
+                                position: relative;
+                                display: inline-block;
+                                color: #999;
+                                vertical-align: middle;
+                                text-align: center;
+                                text-transform: uppercase;
+                                font-size: 7px;
+                                span{
+                                    &.flight-start-date-day{
+                                        display: block;
+                                        margin: 0px 0 4px;
+                                        text-align: center;
+                                        font-size: 12px;
+                                        line-height: 10px;
+                                    }
+                                }
+                            }
+                            .flight-start-city{
+                                overflow: hidden;
+                                margin-top: 6px;
+                                width: 110px;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                font-size: 13px;
+                                line-height: 1.2;
+                                span{
+                                    &.flight-start-city-name{
+                                        white-space: nowrap;
+                                    }
+                                }
+                            }
+                            &.flight-end{
+                                text-align: right;
+                                .flight-start-time{
+                                    margin-right: 0px;
+                                    margin-left: 7px;
+                                }
+                                .flight-start-city{
+                                    text-align: right;
+                                }
+                            }
+                        }
+                        section{
+                            &.flight-stop-layovers{
+                                flex: 1;
+                                padding: 0 8px;
+                                font-weight: 400;
+                                header{
+                                    &.flight-stop-layovers-time{
+                                        display: -ms-flexbox;
+                                        -js-display: flex;
+                                        display: flex;
+                                        -ms-flex-direction: row;
+                                        flex-direction: row;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        margin-top: 4px;
+                                        margin-bottom: 7px;
+                                        text-align: center;
+                                        font-size: 13px;
+                                        span{
+                                            &.formatted_time{
+                                                word-spacing: -.2ex;
+                                                direction: ltr;
+                                            }
+                                        }
+                                    }
+                                }
+                                main{
+                                    &.flight-stop-layovers-list{
+                                        position: relative;
+                                        display: block;
+                                        .flight-stop-layovers-list-wrapper{
+                                            display: -ms-flexbox;
+                                            -js-display: flex;
+                                            display: flex;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                            -ms-flex-pack: justify;
+                                            justify-content: space-between;
+                                            .flight-stop-layover-item{
+                                                position: relative;
+                                                .flight-stop-layover-iata{
+                                                    position: relative;
+                                                    margin-top: -4px;
+                                                    width: 22px;
+                                                    text-align: center;
+                                                    cursor: default;
+                                                    cursor: pointer;
+                                                    span{
+                                                        display: block;
+                                                        margin-top: 5px;
+                                                        text-align: center;
+                                                        text-transform: uppercase;
+                                                        line-height: 1.2;
+                                                    }
+                                                    &:before{
+                                                        display: inline-block;
+                                                        width: 10px;
+                                                        height: 10px;
+                                                        border: 2px solid #fff;
+                                                        border-radius: 5px;
+                                                        background: #fff;
+                                                        content: "";
+                                                    }
+                                                    &:after{
+                                                        position: absolute;
+                                                        top: 2px;
+                                                        left: 50%;
+                                                        margin-left: -4px;
+                                                        width: 6px;
+                                                        height: 6px;
+                                                        border: 3px solid #fff;
+                                                        border-radius: 6px;
+                                                        background-color: rgba(255, 255, 255, 0);
+                                                        box-shadow: 0 0 0 2px $main-color;
+                                                        content: "";
+                                                    }
+                                                }
+                                                .tooltip{
+                                                    width: max-content;
+                                                    .tooltip-inner{
+                                                        padding: 7px 8px;
+                                                        .flight-tooltip{
+                                                            text-align: left;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:before{
+                                        position: absolute;
+                                        top: 0;
+                                        right: 10px;
+                                        left: 10px;
+                                        height: 2px;
+                                        background: $main-color;
+                                        content: "";
+                                    }
+                                }
+                            }
+                        }
+                        .flight-end{
+                            time{
+                                &.flight-end-time{
+
+                                }
+                            }
+                            .flight-end-date{
+                                span{
+                                    &.flight-end-date-day{
+
+                                    }
+                                }
+                            }
+                            .flight-end-city{
+                                span{
+                                    &.flight-end-city-name{
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .flight-detail-info{
+                        display: none;
+                        border-top: 1px dashed #ccc;
+                        margin-top: 13px;
+                        padding: 15px 0px 0px 0px;
+                        .flight-detail-item{
+                            .flight-stop{
+                                overflow: hidden;
+                                color: #333;
+                                font-weight: bold;
+                                padding: 7px 0;
+                                border-top: 1px dashed $main-color;
+                                border-bottom: 1px dashed $main-color;
+                                margin: 15px 0;
+                                .flight-stop-name{
+                                    width: 70%;
+                                    float: left;
+                                    font-size: 13px;
+                                    i{
+
+                                    }
+                                }
+                                .flight-stop-duration{
+                                    width: 30%;
+                                    float: right;
+                                    text-align: right;
+                                }
+                            }
+                            .flight-detail-main{
+                                border-left: 2px dashed #ccc;
+                                padding-left: 10px;
+                                .flight-time{
+                                    overflow: hidden;
+                                    font-weight: bold;
+                                    color: #444;
+                                    .time-range{
+                                        width: 70%;
+                                        float: left;
+                                    }
+                                    .time-duration{
+                                        width: 30%;
+                                        float: right;
+                                        text-align: right;
+                                    }
+                                }
+                                .air-range{
+                                    font-size: 13px;
+                                }
+                                .flight-meta{
+                                    overflow: hidden;
+                                    ul{
+                                        margin: 0;
+                                        padding: 0;
+                                        padding-left: 15px;
+                                        li{
+                                            font-size:13px;
+                                            list-style: square;
+                                            float: left;
+                                            margin-right: 25px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @media #{$info-sphone} {
+                        width: 100%;
+                        border-top: 1px solid #ccc;
+                        padding-top: 5px;
+                        margin-top: 12px;
+                        border-left: 0px;
+                        border-right: 0px;
+                    }
+                }
+                .amadeus-right{
+                    width: 2.5%;
+                    float: left;
+                    position: relative;
+                    cursor: pointer;
+                    i{
+                        &.fa{
+                            font-size: 10px;
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -5px;
+                            left: 50%;
+                            margin-left: -5px;
+                            @media #{$info-sphone} {
+                                position: relative;
+                                border-top: 1px solid gray;
+                            }
+                        }
+                    }
+                    &.open{
+                        i{
+                            -ms-transform: rotate(180deg);
+                            -webkit-transform: rotate(180deg);
+                            transform: rotate(180deg);
+                        }
+                    }
+                    @media #{$info-sphone} {
+                        width: 100%;
+                        border-top: 1px solid #ccc;
+                    }
+                }
+                .hidden{
+                    display: none;
+                }
+                @media #{$info-sphone} {
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+            .load-more{
+                cursor: pointer;
+                background: $main-color;
+                text-align: center;
+                padding: 10px;
+                color: #fff;
+                font-size: 16px;
+                display: none;
+                &:hover{
+                    opacity: 0.9;
+                }
+                &.no-more{
+                    background: gray;
+                }
+            }
+        }
+        @media #{$info-tablet}{
+            min-height: 150px;
+        }
+    }
+}
