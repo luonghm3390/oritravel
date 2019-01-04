@@ -30,7 +30,7 @@ $st_direction = !empty($st_direction)? $st_direction :  "horizontal";
         <input type="hidden" name="s" value="">
         <?php endif ?>
         <?php echo TravelHelper::get_input_multilingual_wpml() ?>
-        <div class="row search-form">
+        <div class="row search-form col-md-10 col-lg-8 col-sm-12 col-xs-12">
             <?php
             if(!empty($fields))
             { 
@@ -58,7 +58,7 @@ $st_direction = !empty($st_direction)? $st_direction :  "horizontal";
                     if($st_direction=='vertical'){
                         $size='12';
                     }
-                    $size_class = " col-md-".$size." col-lg-".$size. " col-sm-12 col-xs-12 " ;
+                    $size_class = " col-md-".$size." col-lg-".$size. " col-sm-".$size." col-xs-12 ".$name ;
                     ?>
                     <div class="<?php echo esc_attr($size_class); ?>">
                         <?php 
@@ -68,6 +68,6 @@ $st_direction = !empty($st_direction)? $st_direction :  "horizontal";
                 <?php 
                 }
             }?>
-            <button class="btn btn-primary btn-lg btn-search-tour" type="submit"><?php st_the_language('search_for_tour')?></button>
+            <button class="btn btn-primary btn-lg btn-search-tour col-md-2 col-lg-2 col-xs-12 col-sm-2" type="submit"><?php st_the_language('search_for_tour')?></button>
         </div>
     </form>

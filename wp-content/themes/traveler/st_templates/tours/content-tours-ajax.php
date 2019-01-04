@@ -34,7 +34,7 @@
         ?>
         <div class="sort_top">
             <div class="row">
-                <div class="col-md-10 col-sm-9 col-xs-9">
+                <div class="col-md-9 col-sm-9 col-xs-9">
                     <ul class="nav nav-pills ajax-filter-wrapper-order">
                         <?php
                          wp_reset_query();
@@ -99,7 +99,7 @@
                         ?>
                     </ul>
                 </div>
-                <div class="col-md-2 col-sm-3 col-xs-3 text-center ajax-filter-wrapper-layout">
+                <div class="col-md-3 col-sm-3 col-xs-12 text-center ajax-filter-wrapper-layout">
                     <div class="sort_icon fist"><a class="<?php if($st_style=='2')echo'active'; ?> checkbox-filter-ajax" href="<?php echo esc_url(add_query_arg(array('style'=>2))) ?>" data-value="2"
                                                    data-type="layout"><i class="fa fa-th-large "></i></a></div>
                     <div class="sort_icon last"><a class="<?php if($st_style=='1')echo'active'; ?> checkbox-filter-ajax" href="<?php echo esc_url(add_query_arg(array('style'=>1))) ?>" data-value="1"

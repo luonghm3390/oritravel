@@ -58,6 +58,7 @@ $css_classes = array(
     'wpb_row', //deprecated
     'vc_row-fluid',
     'st bg-holder',
+    'main-layout',
     $el_class,
     vc_shortcode_custom_css_class( $css ),
 );

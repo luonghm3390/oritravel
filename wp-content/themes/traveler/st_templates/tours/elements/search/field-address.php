@@ -47,9 +47,9 @@ if ($enable_tree == 'on') {
 ?>
 <div class="form-group form-group-<?php echo esc_attr($field_size) ?> form-group-icon-left">
 
-    <label for="field-tour-address"><?php echo esc_html($title) ?></label>
+    <label for="field-tour-address" class="label-address">Destination<?php echo esc_html($title) ?></label>
     <i class="fa fa-map-marker input-icon"></i>
-    <div class="st-select-wrapper luonghm">
+    <div class="st-select-wrapper">
         <input id="field-tour-address" autocomplete="off" type="text" name="location_name"
                value="<?php echo $location_name; ?>"
                class="form-control st-location-name <?php echo esc_attr($is_required); ?>"

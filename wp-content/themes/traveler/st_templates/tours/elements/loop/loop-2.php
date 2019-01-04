@@ -66,67 +66,78 @@ if(empty($taxonomy)) $taxonomy=false;
                 </small>
             </p>
             <?php } ?>
-            <p class="mb0">
-                <small>
-                    <?php $type_tour = get_post_meta($post_id,'type_tour',true); ?>
-                    <?php if($type_tour == 'daily_tour'){
-                        
-                        $day = STTour::get_duration_unit();
-                        if($day) {
-                            ?>
-                            <i class="fa fa-calendar"></i>
-                            <?php echo esc_html($day) ?>
-                            
-                        <?php
-                        }}else{ ?>
-                        <?php
-                        $check_in = get_post_meta($post_id , 'check_in' ,true);
-                        $check_out = get_post_meta($post_id , 'check_out' ,true);
-                        if(!empty($check_out) and !empty($check_out)):
-                            ?>
-                            <i class="fa fa-calendar"></i>
+            <div class="icon-box">
+                <p class="available col-xs-4">
+                    <i class="fa fa-calendar"></i>
+                    <label>Available</label>
+                    <span class="content">All Year</span>
+                </p>
+                <p class="time col-xs-4">
+                    <i class="fa fa-clock-o"></i>
+                    <label>Duration</label>
+                    <span class="content">
+                        <?php $type_tour = get_post_meta($post_id,'type_tour',true); ?>
+                        <?php if($type_tour == 'daily_tour'){
+
+                            $day = STTour::get_duration_unit();
+                            if($day) {
+                                ?>
+                                <?php echo esc_html($day) ?>
+                                <?php
+                            }}else{ ?>
                             <?php
-                            $format=TravelHelper::getDateFormat();
-                            $date = date_i18n($format,strtotime($check_in)).' <i class="fa fa-long-arrow-right"></i> '.date_i18n($format,strtotime($check_out));
-                            echo balanceTags($date);
-                        endif;
+                            $check_in = get_post_meta($post_id , 'check_in' ,true);
+                            $check_out = get_post_meta($post_id , 'check_out' ,true);
+                            if(!empty($check_out) and !empty($check_out)):
+                                ?>
+                                <i class="fa fa-calendar"></i>
+                                <?php
+                                $format=TravelHelper::getDateFormat();
+                                $date = date_i18n($format,strtotime($check_in)).' <i class="fa fa-long-arrow-right"></i> '.date_i18n($format,strtotime($check_out));
+                                echo balanceTags($date);
+                            endif;
+                            ?>
+                        <?php } ?>
+                    </span>
+                </p>
+                <?php
+                if(!wp_is_mobile()){
+                    $is_st_show_number_user_book = st()->get_option('st_show_number_user_book','off');
+                    if($is_st_show_number_user_book == 'on'):
                         ?>
-                    <?php } ?>
-                </small>
-            </p>
-            <?php
-            if(!wp_is_mobile()){
-            $is_st_show_number_user_book = st()->get_option('st_show_number_user_book','off');
-            if($is_st_show_number_user_book == 'on'):
-            ?>
-            <p class="mb0 st_show_user_booked">
-                <small>
-                    <?php $info_book = STTour::get_count_book($post_id);?>
-                    <i class="fa  fa-user"></i>
-                        <span class="">
+                        <p class="st_show_user_booked">
+                            <small>
+                                <?php $info_book = STTour::get_count_book($post_id);?>
+                                <i class="fa  fa-user"></i>
+                                <span class="">
                             <?php
-                                if($info_book > 1){
-                                    echo sprintf( __( '%d users booked',ST_TEXTDOMAIN ), $info_book );
-                                }else{
-                                    echo sprintf( __( '%d user booked',ST_TEXTDOMAIN ), $info_book );
-                                }
+                            if($info_book > 1){
+                                echo sprintf( __( '%d users booked',ST_TEXTDOMAIN ), $info_book );
+                            }else{
+                                echo sprintf( __( '%d user booked',ST_TEXTDOMAIN ), $info_book );
+                            }
                             ?>
                         </span>
-                </small>
-            </p>
-            <?php endif ?>
-            <div class="text-darken">
-                <?php echo st()->load_template( 'tours/elements/attribute' , 'list' ,array("taxonomy"=>$taxonomy));?>
+                            </small>
+                        </p>
+                    <?php endif ?>
+                    <div class="text-darken" style="display: none">
+                        <?php echo st()->load_template( 'tours/elements/attribute' , 'list' ,array("taxonomy"=>$taxonomy));?>
+                    </div>
+                <?php } ?>
+                <p class="price col-xs-4">
+                    <i class="fa fa-tag"></i>
+                    <label>From</label>
+                    <span class="content"><?php  echo STTour::get_price_html($post_id) ?></span>
+                </p>
             </div>
-            <?php } ?>
-            <p class="mb0 text-darken">
-                <?php 
-
-                echo STTour::get_price_html($post_id) ?>
-            </p>
 	        <?php if(!empty(STInput::get('start')) && !empty(STInput::get('end')) && $st_show_number_avai == 'on'){ ?>
 		        <?php echo st()->load_template('tours/elements/seat-availability', null, array()); ?>
 	        <?php } ?>
+
+            <div class="col-xs-12 button">
+                <a class="btn btn-default">Select Dates</a>
+            </div>
         </div>
     </div>
 </div>
