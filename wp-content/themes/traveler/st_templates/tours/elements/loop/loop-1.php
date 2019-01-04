@@ -20,7 +20,7 @@ if(empty($taxonomy)) $taxonomy=false;
 <li <?php post_class('booking-item') ?> itemscope itemtype="http://schema.org/TouristAttraction">
     <?php echo STFeatured::get_featured(); ?>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="booking-item-img-wrap">
                 <a class="" href="<?php echo esc_url($url)?>">
                 <?php 
@@ -41,7 +41,7 @@ if(empty($taxonomy)) $taxonomy=false;
                 <?php } ?>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="booking-item-rating">
                 <ul class="icon-group booking-item-rating-stars">
                     <?php
@@ -80,36 +80,7 @@ if(empty($taxonomy)) $taxonomy=false;
                 <i class="fa    fa-users"></i>
                 <?php echo esc_html($max_people.' ') ; st_the_language('tour_people')?>
             </div>
-            <div class="package-info">
-                <?php $type_tour = get_post_meta(get_the_ID(),'type_tour',true); ?>
-                <?php if($type_tour == 'daily_tour'){
-                        
-                        $day = STTour::get_duration_unit();
-                        if($day) {
-                            ?>
-                            <i class="fa fa-calendar"></i>
-                            <?php echo esc_html($day) ?>
-                            
-                        <?php
-                        }
-                    }else{ ?>
-                    <?php
-                    $check_in = get_post_meta(get_the_ID() , 'check_in' ,true);
-                    $check_out = get_post_meta(get_the_ID() , 'check_out' ,true);
-                    if(!empty($check_out) and !empty($check_out)):
-                        ?>
-                        <i class="fa fa-calendar"></i>
-                        <?php
-                        $format=TravelHelper::getDateFormat();
-                        $date = date_i18n($format,strtotime($check_in)).' <i class="fa fa-long-arrow-right"></i> '.date_i18n($format,strtotime($check_out));
-                        echo balanceTags($date);
-                    endif;
-                    ?>
-                <?php } ?>
-                <?php if(!empty(STInput::get('start')) && !empty(STInput::get('end')) && $st_show_number_avai == 'on'){ ?>
-                    <?php echo st()->load_template('tours/elements/seat-availability', null, array()); ?>
-                <?php } ?>
-            </div>
+
             <?php
             if(!wp_is_mobile()) {
 	            $is_st_show_number_user_book = st()->get_option( 'st_show_number_user_book', 'off' );
@@ -135,30 +106,83 @@ if(empty($taxonomy)) $taxonomy=false;
 	            }
             }
             ?>
-        </div>
-        <div class="col-md-3">
-            <?php if(!empty( $info_price['price_new'] ) and $info_price['price_new']>0) { ?>
-                <span class="booking-item-price-from"><?php st_the_language('tour_from') ?></span>
-            <?php } ?>
-            <?php 
-                if (empty($tour_id)) {
-                    $tour_id  = get_the_ID();
-                }
-            ?>
-            <?php echo STTour::get_price_html($tour_id); ?>
-            <span class="info_price"></span>
-            <a href="<?php echo esc_url($url)?>">
-                <span class="btn btn-primary btn_book"><?php st_the_language('tour_book_now') ?></span>
-            </a>
-	        <?php if(is_user_logged_in()){ ?>
-            <a class="add-item-to-wishlist" data-id="<?php echo get_the_ID(); ?>" data-post_type="<?php echo get_post_type(get_the_ID()); ?>" rel="tooltip" data-toggle="tooltip" data-placement="top" title="<?php echo balanceTags($dataWishList['original-title']) ?>">
-                <?php echo balanceTags($dataWishList['icon']); ?>
-                <i class="fa fa-spinner loading""></i>
-            </a>
-            <?php } ?>
-            <?php if(!empty( $info_price['discount'] ) and $info_price['discount']>0 and $info_price['price_new'] >0) { ?>
-                <?php echo STFeatured::get_sale($info_price['discount']); ?>
-            <?php } ?>
+            <div class="col-xs-12 icon-box">
+                <div class="col-sm-8 col-xs-12">
+                    <div class="available col-xs-4 no-padding">
+                        <i class="fa fa-calendar col-xs-4 no-padding"></i>
+                        <div class="col-xs-8 no-padding">
+                            <label>Available</label>
+                            <span class="content">All Year</span>
+                        </div>
+                    </div>
+                    <div class="package-info col-xs-4 time no-padding">
+                        <i class="fa fa-clock-o col-xs-4 no-padding"></i>
+                        <div class="col-xs-8 no-padding">
+                            <label>Duration</label>
+                            <span class="content">
+                        <?php $type_tour = get_post_meta(get_the_ID(),'type_tour',true); ?>
+                                <?php if($type_tour == 'daily_tour'){
+
+                                    $day = STTour::get_duration_unit();
+                                    if($day) {
+                                        ?>
+                                        <?php echo esc_html($day) ?>
+
+                                        <?php
+                                    }
+                                }else{ ?>
+                                    <?php
+                                    $check_in = get_post_meta(get_the_ID() , 'check_in' ,true);
+                                    $check_out = get_post_meta(get_the_ID() , 'check_out' ,true);
+                                    if(!empty($check_out) and !empty($check_out)):
+                                        ?>
+                                        <i class="fa fa-calendar"></i>
+                                        <?php
+                                        $format=TravelHelper::getDateFormat();
+                                        $date = date_i18n($format,strtotime($check_in)).' <i class="fa fa-long-arrow-right"></i> '.date_i18n($format,strtotime($check_out));
+                                        echo balanceTags($date);
+                                    endif;
+                                    ?>
+                                <?php } ?>
+                                <?php if(!empty(STInput::get('start')) && !empty(STInput::get('end')) && $st_show_number_avai == 'on'){ ?>
+                                    <?php echo st()->load_template('tours/elements/seat-availability', null, array()); ?>
+                                <?php } ?>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="price col-xs-4 no-padding">
+                        <i class="fa fa-tag col-xs-4 no-padding"></i>
+                        <div class="col-xs-8 no-padding">
+                            <label>From</label>
+                            <span class="content">
+                        <?php if(!empty( $info_price['price_new'] ) and $info_price['price_new']>0) { ?>
+                        <?php } ?>
+                                <?php
+                                if (empty($tour_id)) {
+                                    $tour_id  = get_the_ID();
+                                }
+                                ?>
+                                <?php echo STTour::get_price_html($tour_id); ?>
+                        <span class="info_price"></span>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="col-xs-12 button">
+                        <a href="<?php echo esc_url($url)?>" class="btn btn-default"><?php st_the_language('tour_book_now') ?></a>
+                    </div>
+                    <?php if(is_user_logged_in()){ ?>
+                        <a class="add-item-to-wishlist" data-id="<?php echo get_the_ID(); ?>" data-post_type="<?php echo get_post_type(get_the_ID()); ?>" rel="tooltip" data-toggle="tooltip" data-placement="top" title="<?php echo balanceTags($dataWishList['original-title']) ?>">
+                            <?php echo balanceTags($dataWishList['icon']); ?>
+                            <i class="fa fa-spinner loading""></i>
+                        </a>
+                    <?php } ?>
+                    <?php if(!empty( $info_price['discount'] ) and $info_price['discount']>0 and $info_price['price_new'] >0) { ?>
+                        <?php echo STFeatured::get_sale($info_price['discount']); ?>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
     </div>
 </li>

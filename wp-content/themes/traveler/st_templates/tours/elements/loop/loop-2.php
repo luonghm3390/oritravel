@@ -136,7 +136,7 @@ if(empty($taxonomy)) $taxonomy=false;
 	        <?php } ?>
 
             <div class="col-xs-12 button">
-                <a class="btn btn-default">Select Dates</a>
+                <a href="<?php echo esc_url($url)?>" class="btn btn-default"><?php st_the_language('tour_book_now') ?></a>
             </div>
         </div>
     </div>

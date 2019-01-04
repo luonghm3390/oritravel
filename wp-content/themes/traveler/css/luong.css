@@ -342,20 +342,131 @@
     padding: 0;
 }
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .booking-item-rating {
+    display: none;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item-title {
+    font-size: 30px;
+    font-family: 'kraskario';
+    font-weight: 500;
+}
 
+.page-template-template-tour-search #ajax-filter-content .icon-box {
+    margin-top: 30px;
+    padding: 0;
+}
 
+.page-template-template-tour-search #ajax-filter-content .icon-box > div{
+    padding: 0;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .price i{
+    transform: rotate(45deg);
+    font-size: 30px;
+    color: #9fc5e8;
+    padding-top: 10px;
+    font-weight: 200;
+    text-align: right;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .available i{
+    font-size: 30px;
+    color: #9fc5e8;
+    padding-top: 10px;
+    font-weight: 200;
+    text-align: center;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .time i{
+    font-size: 30px;
+    color: #9fc5e8;
+    padding-top: 10px;
+    font-weight: 200;
+    text-align: center;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .available label{
+    font-size: 9px;
+    margin-top: 10px;
+    color: #aaa;
+    margin-bottom: 0px;
+    line-height: 10px;
+    text-transform:uppercase ;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .time label{
+    font-size: 9px;
+    margin-top: 10px;
+    color: #aaa;
+    margin-bottom: 0px;
+    line-height: 10px;
+    text-transform:uppercase ;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .price label{
+    font-size: 9px;
+    margin-top: 10px;
+    color: #aaa;
+    margin-bottom: 0px;
+    line-height: 10px;
+    text-transform:uppercase ;
+}
 
+.no-padding{
+    padding: 0;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .content {
+    color: #737373 !important;
+    white-space: nowrap;
+    font-weight: 600;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .available {
+    border-right: solid 1px;
+    border-color: #e3e3e3;
+    display: inline-block;
+    margin: 0px;
+    padding: 0;
+    text-align: left;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .time {
+    border-right: solid 1px;
+    border-color: #e3e3e3;
+    display: inline-block;
+    margin: 0px;
+    text-align: left;
+    padding: 0;
+}
 
+.page-template-template-tour-search #ajax-filter-content .booking-item .price {
+    margin: 0px;
+    display: inline-block;
+    padding: 0;
+    text-align: left;
+}
+
+.page-template-template-tour-search #ajax-filter-content .booking-item .icon-box .button {
+    margin-top: 10px;
+}
+
+.page-template-template-tour-search #ajax-filter-content .booking-item .icon-box a.btn-default {
+    width: 100%;
+    font-weight: 600;
+    color: #737373;
+    border-color: #e3e3e3;
+}
+
+.page-template-template-tour-search #ajax-filter-content .booking-item .icon-box a.btn-default:hover {
+    background-color: orange;
+    color: white;
+}
+
+.page-template-template-tour-search #ajax-filter-content .booking-item .icon-box {
+    padding-bottom: 10px;
+}
 
 
 
