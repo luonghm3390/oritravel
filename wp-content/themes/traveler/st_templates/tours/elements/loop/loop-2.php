@@ -126,7 +126,7 @@ if(empty($taxonomy)) $taxonomy=false;
                     </div>
                 <?php } ?>
                 <p class="price col-xs-4">
-                    <i class="fa fa-tag"></i>
+                    <i class="fa fa-money"></i>
                     <label>From</label>
                     <span class="content"><?php  echo STTour::get_price_html($post_id) ?></span>
                 </p>

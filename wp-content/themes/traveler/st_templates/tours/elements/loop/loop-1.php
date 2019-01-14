@@ -18,6 +18,9 @@ $url=st_get_link_with_search(get_permalink(),array('start','end','duration','peo
 if(empty($taxonomy)) $taxonomy=false;
 ?>
 <li <?php post_class('booking-item') ?> itemscope itemtype="http://schema.org/TouristAttraction">
+    <?php if(!empty( $info_price['discount'] ) and $info_price['discount']>0 and $info_price['price_new'] >0) { ?>
+        <?php echo STFeatured::get_sale($info_price['discount']); ?>
+    <?php } ?>
     <?php echo STFeatured::get_featured(); ?>
     <div class="row">
         <div class="col-md-4">
@@ -70,6 +73,12 @@ if(empty($taxonomy)) $taxonomy=false;
             </div>
             <a class="" href="<?php echo esc_url($url)?>">
                 <h5 class="booking-item-title"><?php the_title() ?></h5>
+                <?php if(is_user_logged_in()){ ?>
+                    <a class="add-item-to-wishlist" data-id="<?php echo get_the_ID(); ?>" data-post_type="<?php echo get_post_type(get_the_ID()); ?>" rel="tooltip" data-toggle="tooltip" data-placement="top" title="<?php echo balanceTags($dataWishList['original-title']) ?>">
+                        <?php echo balanceTags($dataWishList['icon']); ?>
+                        <i class="fa fa-spinner loading""></i>
+                    </a>
+                <?php } ?>
             </a>
             <?php if ($address = get_post_meta(get_the_ID(), 'address', true)): ?>
                 <p class="booking-item-address"><i class="fa fa-map-marker"></i> <?php echo esc_html($address) ?>
@@ -109,15 +118,15 @@ if(empty($taxonomy)) $taxonomy=false;
             <div class="col-xs-12 icon-box">
                 <div class="col-sm-8 col-xs-12">
                     <div class="available col-xs-4 no-padding">
-                        <i class="fa fa-calendar col-xs-4 no-padding"></i>
-                        <div class="col-xs-8 no-padding">
+                        <i class="fa fa-calendar col-xs-12 col-md-4 no-padding"></i>
+                        <div class="col-md-8 col-xs-12 no-padding">
                             <label>Available</label>
                             <span class="content">All Year</span>
                         </div>
                     </div>
                     <div class="package-info col-xs-4 time no-padding">
-                        <i class="fa fa-clock-o col-xs-4 no-padding"></i>
-                        <div class="col-xs-8 no-padding">
+                        <i class="fa fa-clock-o col-xs-12 col-md-4 no-padding"></i>
+                        <div class="col-md-8 col-xs-12 no-padding">
                             <label>Duration</label>
                             <span class="content">
                         <?php $type_tour = get_post_meta(get_the_ID(),'type_tour',true); ?>
@@ -151,8 +160,8 @@ if(empty($taxonomy)) $taxonomy=false;
                         </div>
                     </div>
                     <div class="price col-xs-4 no-padding">
-                        <i class="fa fa-tag col-xs-4 no-padding"></i>
-                        <div class="col-xs-8 no-padding">
+                        <i class="fa fa-money col-xs-12 col-md-4 no-padding"></i>
+                        <div class=" col-xs-12 col-md-8 no-padding">
                             <label>From</label>
                             <span class="content">
                         <?php if(!empty( $info_price['price_new'] ) and $info_price['price_new']>0) { ?>
@@ -172,15 +181,6 @@ if(empty($taxonomy)) $taxonomy=false;
                     <div class="col-xs-12 button">
                         <a href="<?php echo esc_url($url)?>" class="btn btn-default"><?php st_the_language('tour_book_now') ?></a>
                     </div>
-                    <?php if(is_user_logged_in()){ ?>
-                        <a class="add-item-to-wishlist" data-id="<?php echo get_the_ID(); ?>" data-post_type="<?php echo get_post_type(get_the_ID()); ?>" rel="tooltip" data-toggle="tooltip" data-placement="top" title="<?php echo balanceTags($dataWishList['original-title']) ?>">
-                            <?php echo balanceTags($dataWishList['icon']); ?>
-                            <i class="fa fa-spinner loading""></i>
-                        </a>
-                    <?php } ?>
-                    <?php if(!empty( $info_price['discount'] ) and $info_price['discount']>0 and $info_price['price_new'] >0) { ?>
-                        <?php echo STFeatured::get_sale($info_price['discount']); ?>
-                    <?php } ?>
                 </div>
             </div>
         </div>
